@@ -31,6 +31,7 @@ contract TestingToken is ERC20, Ownable {
 
     modifier canBurn(address from) {
         if (msg.sender != from) {
+            
             revert OnlyOwnerCanBurn();
         }
         _;
